@@ -1,0 +1,33 @@
+﻿<Window x:Class="HH_WPF_Test_Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HH_WPF_Test_Task"
+        mc:Ignorable="d"
+        Title="Test Task" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"/>
+            <RowDefinition/>
+            <RowDefinition Height="37"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="383*"/>
+            <ColumnDefinition Width="401*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="cancelButton" Content="cancel" Margin="0,3,133,2" Click="cancelButton_Click" Grid.Column="1" Grid.Row="2" Visibility="Hidden" HorizontalAlignment="Right" Width="144"/>
+        <Label x:Name="sum_a_label" Content="Label" HorizontalAlignment="Left" Width="215" Grid.Row="2" Margin="0,8,0,0" Grid.ColumnSpan="2"/>
+        <Label x:Name="taskLable" Content="///" Background="White" Margin="0,3,8,2" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Width="120"/>
+        <Menu Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="800">
+            <MenuItem x:Name="fileMenuItem" Header="File">
+                <MenuItem x:Name="openfileMenuItem" Header="Open"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem x:Name="xlslHelpItem" Header="xlsx format" Click="xlsxHelper_Click"/>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="urlsList" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,10,0" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
